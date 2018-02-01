@@ -1,0 +1,263 @@
+THE COMMAND USED FOR FILTERS ARE:
+NAME
+       head - output the first part of files
+
+SYNOPSIS
+       head [OPTION]... [FILE]...
+
+DESCRIPTION
+
+       -c, --bytes=[-]NUM
+              print  the  first  NUM bytes of each file; with the leading '-',
+              print all but the last NUM bytes of each file
+
+       -n, --lines=[-]NUM
+               print the first NUM lines instead of  the  first  10;  with  the
+              leading '-', print all but the last NUM lines of each file
+
+       -q, --quiet, --silent
+              never print headers giving file names
+
+       -v, --verbose
+              always print headers giving file names
+THE COMMANDS USED FOR TAIL
+NAME
+       tail - output the last part of files
+
+SYNOPSIS
+       tail [OPTION]... [FILE]...
+
+DESCRIPTION
+       -c, --bytes=[+]NUM
+              output  the  last  NUM  bytes; or use -c +NUM to output starting
+              with byte NUM of each file
+
+       -f, --follow[={name|descriptor}]
+              output appended data as the file grows;
+              an absent option argument means 'descriptor'
+
+       --max-unchanged-stats=N
+              with --follow=name, reopen a FILE which has not
+
+              changed  size  after  N  (default 5) iterations to see if it has
+              been unlinked or renamed (this is the usual case of rotated  log
+              files); with inotify, this option is rarely useful
+
+       THE COMMANDS USED FOR SORT
+NAME
+       sort - sort lines of text files
+
+SYNOPSIS
+       sort [OPTION]... [FILE]...
+       sort [OPTION]... --files0-from=F
+
+DESCRIPTION
+
+       -b, --ignore-leading-blanks
+              ignore leading blanks
+
+       -d, --dictionary-order
+              consider only blanks and alphanumeric characters
+       -f, --ignore-case
+              fold lower case to upper case characters
+
+       -g, --general-numeric-sort
+              compare according to general numerical value
+
+       -i, --ignore-nonprinting
+              consider only printable character
+
+       THE COMMANDS USED UNIQ 
+NAME
+       uniq - report or omit repeated lines
+
+SYNOPSIS
+       uniq [OPTION]... [INPUT [OUTPUT]]
+
+DESCRIPTION
+       Filter  adjacent matching lines from INPUT (or standard input), writing
+       to OUTPUT (or standard output).
+
+       With no options, matching lines are merged to the first occurrence.
+
+       Mandatory arguments to long options are  mandatory  for  short  options
+       too.
+
+       -c, --count
+              prefix lines by the number of occurrences
+
+       -d, --repeatedNAME
+       uniq - report or omit repeated lines
+
+SYNOPSIS
+       uniq [OPTION]... [INPUT [OUTPUT]]
+
+DESCRIPTION
+       Filter  adjacent matching lines from INPUT (or standard input), writing
+       to OUTPUT (or standard output).
+
+       With no options, matching lines are merged to the first occurrence.
+
+       Mandatory arguments to long options are  mandatory  for  short  options
+       too.
+
+       -c, --count
+              prefix lines by the number of occurrences
+
+       -d, --repeated
+              only print duplicate lines, one for each group
+
+              only print duplicate lines, one for each group
+
+       --all-repeated[=METHOD]
+              like  -D,  but  allow  separating  groups  with  an  empty line;
+              METHOD={none(default),prepend,separate}
+
+       -f, --skip-fields=N
+              avoid comparing the first N fields
+
+       --group[=METHOD]
+              show  all  items,  separating  groups  with   an   empty   line;
+              METHOD={separate(default),prepend,append,both}
+
+       -i, --ignore-case
+              ignore differences in case when comparing
+
+       -s, --skip-chars=N
+              avoid comparing the first N characters
+
+       -u, --unique
+              only print unique lines.
+THE COMMAND USED FOR WC
+
+NAME
+       wc - print newline, word, and byte counts for each file
+
+SYNOPSIS
+       wc [OPTION]... [FILE]...
+       wc [OPTION]... --files0-from=F
+DESCRIPTION
+       Print newline, word, and byte counts for each FILE, and a total line if
+       more than one FILE is specified.  A word is a non-zero-length  sequence
+       of characters delimited by white space.
+
+       With no FILE, or when FILE is -, read standard input.
+
+       The  options  below  may  be  used  to select which counts are printed,
+       always in the following order: newline, word, character, byte,  maximum
+       line length.
+
+       -c, --bytes
+              print the byte counts
+
+       -m, --chars
+              print the character counts
+
+       -l, --lines
+              print the newline counts
+
+THE COMMAND USED PASTE
+
+NAME
+       paste - merge lines of files
+
+SYNOPSIS
+       paste [OPTION]... [FILE]...
+
+DESCRIPTION
+       -d, --delimiters=LIST
+              reuse characters from LIST instead of TABs
+
+       -s, --serial
+              paste one file at a time instead of in parallel
+
+       
+       -z, --zero-terminated
+              line delimiter is NUL, not newline
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+    cs2016a219@user:~/sanjana3$ cut -d "," -f 3 sanjana.csv
+reg no
+A234
+A235
+A236
+A237
+A238
+A239
+cs2016a219@user:~/sanjana3$ cut -d "," -f 3 sanjana.csv| sort | grep -v "usn" 
+A234
+A235
+A236
+A237
+A238
+A239
+reg no
+cs2016a219@user:~/sanjana3$ cut -d "," -f 2 sanjana.csv
+name
+ashritha
+harshitha
+deepisha
+pinky
+priya
+samyuktha
+cs2016a219@user:~/sanjana3$ ls
+sanjana3  sanjana4.csv  sanjana.csv
+cs2016a219@user:~/sanjana3$ head -n 6 sanjana.csv
+sl no,name,reg no
+1,ashritha,A234
+2,harshitha,A235
+3,deepisha,A236
+4,pinky,A237
+5,priya,A238
+cs2016a219@user:~/sanjana3$ tail sanjana.csv
+sl no,name,reg no
+1,ashritha,A234
+2,harshitha,A235
+3,deepisha,A236
+4,pinky,A237
+5,priya,A238
+6,samyuktha,A239
+cs2016a219@user:~/sanjana3$ sort sanjana.csv
+1,ashritha,A234
+2,harshitha,A235
+3,deepisha,A236
+4,pinky,A237
+5,priya,A238
+6,samyuktha,A239
+sl no,name,reg no
+cs2016a219@user:~/sanjana3$ sort sanjana.csv
+1,ashritha,A234
+2,harshitha,A235
+3,deepisha,A236
+4,pinky,A237
+5,priya,A238
+6,samyuktha,A239
+sl no,name,reg no
+cs2016a219@user:~/sanjana3$ uniq sanjana.csv
+sl no,name,reg no
+1,ashritha,A234
+2,harshitha,A235
+3,deepisha,A236
+4,pinky,A237
+5,priya,A238
+6,samyuktha,A239
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
