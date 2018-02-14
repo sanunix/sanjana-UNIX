@@ -1,0 +1,18 @@
+
+VIM HAS TWO MODES:
+1.Insert mode(where you can just type normal text editor.press i for insert mode.
+2.Command mode(where you give commands to the editor ton get things done.Press ESCfor command mode.
+
+Command modes are
+
+1)x-to delete the unwanted character.
+2)u-to undo the last command and U to undo the who line.
+3)CTRL-R to redo.
+4):ql-To trash all the changes.
+5)dw-To move the cursor to the beginning of the word to delete that word.
+6)2w-To move the cursor two words forward.
+7)3e-To move the cursor to hte end of the third word forward.
+8)0(zero)-To move to the start of the line.
+9)d2w-which deletes 2 words number can be changed for deleting number of consecutive words.
+10)r-to replace the letter eg:press r to replace the letter with c.
+11)ce-To change until the end of a word(place the cursor on the U in lubw it will delete ubw).
