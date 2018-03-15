@@ -1,0 +1,59 @@
+ANSWERS FOR SED COMMAND:
+#)
+cs2016a219@user:~/sanemp1$ sed -n ' /manager/p' sanemp1.lst
+rasti|manager|marketing|12/02/2014|33455
+5983|dinesh|senior manager|sales|14/04/2018|65000
+2735|dimple|junior manager|accounts|23/03/2016|32000
+7636|raksha|assistant manager|sales|23/02/2013|23000
+9465|pratek|senior manager|marketing|11/04/2012|20000
+9833|sampu|junior manager|accounts|12/02/2014|34000
+8734|vishnu|manager|HR|sales|23/02/2013|65345
+
+#)
+cs2016a219@user:~/sanemp1$ sed -n '1,2!p' sanemp1.lst
+2735|dimple|junior manager|accounts|23/03/2016|32000
+9183|suprith|ceo|delivery|sales|21/02/2011|23000
+7636|raksha|assistant manager|sales|23/02/2013|23000
+9465|pratek|senior manager|marketing|11/04/2012|20000
+9833|sampu|junior manager|accounts|12/02/2014|34000
+8734|vishnu|manager|HR|sales|23/02/2013|65345
+3847|sanchith|director|marketing|19/03/2017|34000
+7362|pratiksha|senior director|23/03/2018|65000
+
+#)
+cs2016a219@user:~/sanemp1$ sed -n '/34000/p' sanemp1.lst
+9833|sampu|junior manager|accounts|12/02/2014|34000
+3847|sanchith|director|marketing|19/03/2017|34000
+
+#)
+cs2016a219@user:~/sanemp1$ sed 's/manager/director/g' sanemp1.lst
+rasti|director|marketing|12/02/2014|33455
+5983|dinesh|senior director|sales|14/04/2018|65000
+2735|dimple|junior director|accounts|23/03/2016|32000
+9183|suprith|ceo|delivery|sales|21/02/2011|23000
+7636|raksha|assistant director|sales|23/02/2013|23000
+9465|pratek|senior director|marketing|11/04/2012|20000
+9833|sampu|junior director|accounts|12/02/2014|34000
+8734|vishnu|director|HR|sales|23/02/2013|65345
+3847|sanchith|director|marketing|19/03/2017|34000
+7362|pratiksha|senior director|23/03/2018|65000
+
+#)
+cs2016a219@user:~/sanemp1$ sed -n '1,3p' sanemp1.lst
+rasti|manager|marketing|12/02/2014|33455
+5983|dinesh|senior manager|sales|14/04/2018|65000
+2735|dimple|junior manager|accounts|23/03/2016|32000
+
+#)
+cs2016a219@user:~/sanemp1$ sed 's/|/:/' sanemp1.lst
+rasti:manager|marketing|12/02/2014|33455
+5983:dinesh|senior manager|sales|14/04/2018|65000
+2735:dimple|junior manager|accounts|23/03/2016|32000
+9183:suprith|ceo|delivery|sales|21/02/2011|23000
+7636:raksha|assistant manager|sales|23/02/2013|23000
+9465:pratek|senior manager|marketing|11/04/2012|20000
+9833:sampu|junior manager|accounts|12/02/2014|34000
+8734:vishnu|manager|HR|sales|23/02/2013|65345
+3847:sanchith|director|marketing|19/03/2017|34000
+7362:pratiksha|senior director|23/03/2018|65000
+
