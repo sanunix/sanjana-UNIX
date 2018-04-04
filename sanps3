@@ -1,0 +1,26 @@
+* Use of select command to display a menu of names
+
+PS3='select names : '
+names='Anu priya supriya quit'
+select name in $names
+do
+if [ $name == 'quit' ]
+then
+break
+fi
+echo hello $name
+done
+
+OUTPUT
+
+1) Anu 
+2) Priya
+3) Supriya
+4) quit
+select names : 1
+hello Anu
+select names : 2
+hello priya
+select names : 3
+hello supriya 
+select names : 4
