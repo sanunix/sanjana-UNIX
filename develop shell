@@ -1,0 +1,18 @@
+Basic lifetime of a shell
+
+1.Initialize: In this step, a typical shell would read and execute its configuration files. These change aspects of the shell’s behavior.
+2.Interpret: Next, the shell reads commands from stdin (which could be interactive, or a file) and executes them.
+3.Terminate: After its commands are executed, the shell executes any shutdown commands, frees up any memory, and terminates.
+
+
+Simple way to handle commands 
+
+1.Read: Read the command from standard input.
+2.Parse: Separate the command string into a program and arguments.
+3.Execute: Run the parsed command.
+
+
+How shells start processes 
+
+There are only two ways of starting processes on Unix. The first one (which almost doesn’t count) is by being Init.When a Unix computer boots, its kernel is loaded. Once it is loaded and initialized, the kernel starts only one process, which is called Init. This process runs for the entire length of time that the computer is on, and it manages loading up the rest of the processes that you need for your computer to be useful.
+Since most programs aren’t Init, that leaves only one practical way for processes to get started: the fork() system call. When this function is called, the operating system makes a duplicate of the process and starts them both running. The original process is called the “parent”, and the new one is called the “child”. fork() returns 0 to the child process, and it returns to the parent the process ID number (PID) of its child. In essence, this means that the only way for new processes is to start is by an existing one duplicating itself.If you want to change directory, you need to use the function chdir().
