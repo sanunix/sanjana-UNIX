@@ -1,0 +1,7 @@
+Exercise 10
+
+Develope a search engine to search for a word or a phrase in all or any file on your computer
+
+echo "enter the pattern to be searched"
+read n
+grep -r1 "$n" "/home"
