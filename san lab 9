@@ -1,0 +1,185 @@
+Excersice 4
+
+1. Shell script to prefix all the filenames with the date dd/mm/YY format
+
+file="/home/san/test"
+cdate=$(date +%d-%m-%Y)
+for file in *
+do      
+        mv "$file" "$cdate"_"$file"
+done 
+
+OUTPUT
+
+28-02-2018_t1
+28-02-2018_t2
+28-02-2018_t3
+
+
+
+
+
+
+2.Grep with all possible options
+
+$ cat > sample
+Unix is a programming language that use commands
+unix is case sensitive
+It helps to perform multi task
+
+With "-i" option
+$ grep -i "unix" sample
+
+With "-v" option
+$ grep -v "unix" sample
+
+With "-n" option
+grep -n "unix" sample
+
+With "-c" option
+$ grep -c "unix" sample
+
+With "-l" option
+$ grep -l "unix" sample
+
+With "-e" option
+$ grep -e "unix" -e "Unix" sample
+
+With "-x" option
+$ grep -x "unix" sample
+
+
+
+
+
+3.Setting permission to the files/directories
+
+$ cat > sample
+$ chmod u+x sample
+ls -l sample
+
+-rwxr--r-- 1 cs2016a204 cs2016a204 28 Feb 10:15 sample
+
+
+
+
+
+4.File related commands
+
+* cp command
+Create two files s1 and s2 
+$ cat > s1
+hi
+$ cat > s2
+hello
+$ cp s2 s1
+$ cat s1
+
+Output
+hello
+
+* rm command
+The created file s1 gets deleted
+$ rm s1
+$ cat s1
+
+Output
+cat: s1: No such file or directory
+
+* mv command
+Create two files n1 and n2
+$ cat > n1
+hi
+$ cat > n2
+hello
+$ mv n2 n1
+$ cat n1
+
+Output
+hello
+
+* cmp command
+Create two files s1 and s2
+$ cat > s1                                           
+This is a sample file
+$ cat > s2
+This is another sample file
+$ cmp s1 s2
+
+Output
+s1 s2 differ: byte 1,line 1
+
+* diff command
+Create two files n1 and n2
+$ cat > n1
+Unix is a programming language
+Unix uses commands
+Everything is a file in unix
+
+$ cat > n2
+Unix is also a programming language
+Unix uses the commands
+Everything is a process in unix
+
+$ diff n1 n2
+
+Output
+1,3c1,3
+< Unix is a programming language
+< Unix uses commands
+< Everything is a file in unix
+\ No newline at end of file
+---
+> Unix is also a programming language
+> Unix uses the commands
+> Everything is a process in unix
+\ No newline at end of file
+
+
+
+
+5.Use of find an xargs command
+
+find command is used to find files
+$ find *lst -print
+
+Output
+emp.lst
+
+xargs command is used to build and execute command lines from standard input
+$ echo a b c d e f|xargs -n 3
+
+Output
+a b c
+d e f
+
+
+6.Write a regular expression that takes care of the pattern agarwal with all possible cases
+
+$ grep [aA][gg]g*[ar][ra]wal test
+
+Aggarwal
+Agarwal
+Agrawal
+Aggrawal
+aggarwal
+agarwal
+aggrawal
+agrawal
+
+
+7.Grep command to display only long listing of directories
+
+$ ls -l|grep '^d'
+
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 18 08:50 Desktop
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Feb  1 10:23 Documents
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Feb 27 11:12 Downloads
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 18 08:50 Music
+drwxr-xr-x 3 cs2016a204 cs2016a204 4096 Mar 22 09:30 nivedha
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 18 08:50 Pictures
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 18 08:50 Public
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 18 08:50 Templates
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Feb 22 10:22 test
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 18 08:50 Videos
+
