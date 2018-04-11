@@ -1,0 +1,83 @@
+echo "input a"
+read a
+echo "input b"
+read b
+echo "1 to add"
+echo "2 to sub"
+echo "3 to multiply"
+echo "4 to divide"
+echo "operator"
+read op
+case  $op in 
+
+	1) echo `expr $a + $b`;;
+
+	2) echo `expr $a - $b`;;
+
+	3) echo `expr $a \* $b`;;
+
+	4) echo `expr $a / $b`;;
+
+	*) echo invalid ;;
+
+esac
+OUTPUT
+
+To add two numbers
+
+input a
+6 
+input b
+3
+1 to add 
+2 to sub 
+3 to mult 
+4 to div 
+5 to exit
+1
+9
+
+To subtract two numbers
+
+input a
+4 
+input b
+2
+1 to add 
+2 to sub 
+3 to mult 
+4 to div 
+5 to exit
+2
+2
+ 
+To multiply two numbers
+
+input a
+3
+input b
+3
+1 to add 
+2 to sub 
+3 to mult 
+4 to div 
+5 to exit
+3
+9
+
+To divide two numbers 
+
+input a
+14
+input b
+7
+1 to add 
+2 to sub 
+3 to mult 
+4 to div 
+5 to exit
+4
+2
+
+
+
